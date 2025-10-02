@@ -1,3 +1,3 @@
 def text():
-    message="message"
+    message = "message"
     return message
