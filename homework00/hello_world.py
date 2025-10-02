@@ -1,6 +1,4 @@
-"okijuhgfdfghyjuiop"
 def text():
-    "oipuoufytdrtfguiopo["
-    message=str("message")
+    message="message"
     return message
 text()
