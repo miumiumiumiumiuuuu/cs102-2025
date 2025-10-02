@@ -1,3 +1,4 @@
 def text():
-    message="message"
+    message:str="message"
     return message
+text()
