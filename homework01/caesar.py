@@ -1,4 +1,5 @@
 def encrypt_caesar(plaintext: str, shift: int = 3) -> str:
+<<<<<<< HEAD
     """
     Encrypts plaintext using a Caesar cipher.
 
@@ -24,12 +25,21 @@ def encrypt_caesar(plaintext: str, shift: int = 3) -> str:
             base = ord('a')
             encrypted_char = chr((ord(char) - base + shift) % 26 + base)
             ciphertext += encrypted_char
+=======
+    ciphertext = ""
+    for char in plaintext:
+        if char.isalpha():
+            if char.isupper():
+                ciphertext += chr((ord(char) - ord('A') + shift) % 26 + ord('A'))
+            else:
+                ciphertext += chr((ord(char) - ord('a') + shift) % 26 + ord('a'))
+>>>>>>> 4d246f615fb47caa9548f6beb51bd5bda1271d2a
         else:
             ciphertext += char
     return ciphertext
 
-
 def decrypt_caesar(ciphertext: str, shift: int = 3) -> str:
+<<<<<<< HEAD
     """
     Decrypts a ciphertext using a Caesar cipher.
 
@@ -56,6 +66,15 @@ def decrypt_caesar(ciphertext: str, shift: int = 3) -> str:
             base = ord('a')
             decrypted_char = chr((ord(char) - base - shift) % 26 + base)
             plaintext += decrypted_char
+=======
+    plaintext = ""
+    for char in ciphertext:
+        if char.isalpha():
+            if char.isupper():
+                plaintext += chr((ord(char) - ord('A') - shift) % 26 + ord('A'))
+            else:
+                plaintext += chr((ord(char) - ord('a') - shift) % 26 + ord('a'))
+>>>>>>> 4d246f615fb47caa9548f6beb51bd5bda1271d2a
         else:
             plaintext += char
     return plaintext
