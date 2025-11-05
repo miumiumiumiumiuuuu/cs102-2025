@@ -9,26 +9,19 @@ def encrypt_vigenere(plaintext: str, keyword: str) -> str:
     'LXFOPVEFRNHR'
     """
     ciphertext = ""
-    extended_key = ""
-    key_index = 0
-    for char in plaintext:
-        if char.isalpha():
-            extended_key += keyword[key_index % len(keyword)]
-            key_index += 1
-        else:
-            extended_key += char
+    keyword = keyword.upper()
+    key_length = len(keyword)
+
     for i, char in enumerate(plaintext):
         if char.isalpha():
-            key_char = extended_key[i]
-            if key_char.isupper():
-                shift = ord(key_char) - ord('A')
-            else:
-                shift = ord(key_char) - ord('a')
+            key_char = keyword[i % key_length]
+            shift = ord(key_char) - ord("A")
+
             if char.isupper():
-                base = ord('A')
+                base = ord("A")
                 encrypted_char = chr((ord(char) - base + shift) % 26 + base)
             else:
-                base = ord('a')
+                base = ord("a")
                 encrypted_char = chr((ord(char) - base + shift) % 26 + base)
 
             ciphertext += encrypted_char
@@ -48,26 +41,19 @@ def decrypt_vigenere(ciphertext: str, keyword: str) -> str:
     'ATTACKATDAWN'
     """
     plaintext = ""
-    extended_key = ""
-    key_index = 0
-    for char in ciphertext:
-        if char.isalpha():
-            extended_key += keyword[key_index % len(keyword)]
-            key_index += 1
-        else:
-            extended_key += char
+    keyword = keyword.upper()
+    key_length = len(keyword)
+
     for i, char in enumerate(ciphertext):
         if char.isalpha():
-            key_char = extended_key[i]
-            if key_char.isupper():
-                shift = ord(key_char) - ord('A')
-            else:
-                shift = ord(key_char) - ord('a')
+            key_char = keyword[i % key_length]
+            shift = ord(key_char) - ord("A")
+
             if char.isupper():
-                base = ord('A')
+                base = ord("A")
                 decrypted_char = chr((ord(char) - base - shift) % 26 + base)
             else:
-                base = ord('a')
+                base = ord("a")
                 decrypted_char = chr((ord(char) - base - shift) % 26 + base)
 
             plaintext += decrypted_char

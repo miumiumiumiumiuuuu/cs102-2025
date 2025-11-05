@@ -1,9 +1,7 @@
 import random
 import string
 import unittest
-
 import vigenere
-
 
 class VigenereTestCase(unittest.TestCase):
     def test_encrypt(self):
