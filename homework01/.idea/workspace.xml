@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="95d8c16c-64ba-4367-b74c-9be578d89276" name="Changes" comment="Реализована функция encrypt_caesar()" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="homework02" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;miumiumiumiumiuuuu&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/miumiumiumiumiuuuu/cs102-2025.git&quot;,
+    &quot;accountId&quot;: &quot;05770a78-9b3b-4159-acab-014074bbe992&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="34mi2kWlJGwdZAeevJQZ0MIc61B" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.Doctests in caesar.executor": "Run",
+    "Python tests.Doctests in vigenere.executor": "Run",
+    "Python tests.Python tests in test_caesar.py.executor": "Run",
+    "Python tests.Python tests in test_rsa.py.executor": "Run",
+    "Python tests.Python tests in test_vigenere.py.executor": "Run",
+    "Python.__init__.executor": "Run",
+    "Python.caesar.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "homework02",
+    "last_opened_file_path": "C:/Users/miiiu/cs102-2025/homework01",
+    "settings.editor.selected.configurable": "terminal"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\miiiu\cs102-2025\homework01" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-598b0484d0b5-e2d783800521-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.26927.74" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="95d8c16c-64ba-4367-b74c-9be578d89276" name="Changes" comment="" />
+      <created>1761824942695</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1761824942695</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Реализована функция encrypt_caesar()">
+      <option name="closed" value="true" />
+      <created>1762115453009</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1762115453009</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Реализована функция encrypt_caesar()">
+      <option name="closed" value="true" />
+      <created>1762117764389</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1762117764389</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Реализована функция encrypt_caesar()">
+      <option name="closed" value="true" />
+      <created>1762342651996</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762342651996</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Реализована функция encrypt_caesar()">
+      <option name="closed" value="true" />
+      <created>1762343259232</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1762343259232</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Реализована функция encrypt_caesar()">
+      <option name="closed" value="true" />
+      <created>1762343657719</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1762343657719</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Реализована функция encrypt_caesar()">
+      <option name="closed" value="true" />
+      <created>1762343814934</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1762343814934</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Реализована функция encrypt_caesar()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Реализована функция encrypt_caesar()" />
+  </component>
+</project>
