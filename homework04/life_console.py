@@ -1,6 +1,9 @@
 import curses
+
 from life import GameOfLife
 from ui import UI
+
+
 class Console(UI):
     def __init__(self, life: GameOfLife) -> None:
         super().__init__(life)
