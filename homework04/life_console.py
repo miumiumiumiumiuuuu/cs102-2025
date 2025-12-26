@@ -9,13 +9,13 @@ class Console(UI):
         super().__init__(life)
 
     def draw_borders(self, screen) -> None:
-        """ Отобразить рамку. """
+        """Отобразить рамку."""
         pass
         """Отобразить рамку."""
         screen.border(0)
 
     def draw_grid(self, screen) -> None:
-        """ Отобразить состояние клеток. """
+        """Отобразить состояние клеток."""
         pass
         """Отобразить состояние клеток."""
         for row in range(self.life.rows):

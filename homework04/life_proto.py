@@ -10,21 +10,25 @@ Grid = tp.List[Cells]
 
 
 class GameOfLife:
-    def __init__(
-        self, width: int = 640, height: int = 480, cell_size: int = 10, speed: int = 10
-    ) -> None:
     def __init__(self, width: int = 640, height: int = 480, cell_size: int = 10, speed: int = 10) -> None:
         self.width = width
         self.height = height
         self.cell_size = cell_size
-@@ -28,35 +26,29 @@ def __init__(
+
+        # Устанавливаем размер окна
+        self.screen_size = width, height
+        # Создание нового окна
+        self.screen = pygame.display.set_mode(self.screen_size)
+
+        # Вычисляем количество ячеек по вертикали и горизонтали
+        self.cell_width = self.width // self.cell_size
+        self.cell_height = self.height // self.cell_size
 
         # Скорость протекания игры
         self.speed = speed
         self.grid = self.create_grid(randomize=True)
 
     def draw_lines(self) -> None:
-        """ Отрисовать сетку """
         """Отрисовать сетку"""
         for x in range(0, self.width, self.cell_size):
             pygame.draw.line(self.screen, pygame.Color("black"), (x, 0), (x, self.height))
@@ -32,107 +36,123 @@ class GameOfLife:
             pygame.draw.line(self.screen, pygame.Color("black"), (0, y), (self.width, y))
 
     def run(self) -> None:
-        """ Запустить игру """
         """Запустить игру"""
         pygame.init()
         clock = pygame.time.Clock()
         pygame.display.set_caption("Game of Life")
         self.screen.fill(pygame.Color("white"))
 
-        # Создание списка клеток
-        # PUT YOUR CODE HERE
+        self.grid = self.create_grid(randomize=True)
 
         running = True
         while running:
             for event in pygame.event.get():
-                if event.type == QUIT:
+                if event.type == pygame.QUIT:
                     running = False
             self.draw_lines()
+            self.draw_grid()
 
             # Отрисовка списка клеток
             # Выполнение одного шага игры (обновление состояния ячеек)
-            # PUT YOUR CODE HERE
-
-            self.draw_grid()
             self.grid = self.get_next_generation()
+
             pygame.display.flip()
             clock.tick(self.speed)
         pygame.quit()
-@@ -79,13 +71,32 @@ def create_grid(self, randomize: bool = False) -> Grid:
+
+    def create_grid(self, randomize: bool = False) -> Grid:
+        """
+        Создание списка клеток.
+
+        Клетка считается живой, если ее значение равно 1, в противном случае клетка
+        считается мертвой, то есть, ее значение равно 0.
+
+        Parameters
+        ----------
+        randomize : bool
+            Если значение истина, то создается матрица, где каждая клетка может
+            быть равновероятно живой или мертвой, иначе все клетки создаются мертвыми.
+
+        Returns
+        ----------
         out : Grid
             Матрица клеток размером `cell_height` х `cell_width`.
         """
-        pass
-        grid = []
-        for row in range(self.cell_height):
-            grid_row = []
-            for col in range(self.cell_width):
-                if randomize:
-                    cell_value = random.randint(0, 1)
-                else:
-                    cell_value = 0
-                grid_row.append(cell_value)
-            grid.append(grid_row)
+
+        grid = [[0] * self.cell_width for _ in range(self.cell_height)]
+        if randomize:
+            for i in range(self.cell_height):
+                for j in range(self.cell_width):
+                    grid[i][j] = random.randint(0, 1)
         return grid
 
     def draw_grid(self) -> None:
         """
         Отрисовка списка клеток с закрашиванием их в соответствующе цвета.
         """
-        pass
-        for row in range(self.cell_height):
-            for col in range(self.cell_width):
-                x = col * self.cell_size
-                y = row * self.cell_size
-                cell_rect = pygame.Rect(x, y, self.cell_size, self.cell_size)
-                if self.grid[row][col] == 1:
-                    color = pygame.Color("green")
+        alive = pygame.Color("green")
+        dead = pygame.Color("white")
+
+        for y in range(self.cell_height):
+            for x in range(self.cell_width):
+                rect = pygame.Rect(x * self.cell_size, y * self.cell_size, self.cell_size, self.cell_size)
+                if self.grid[y][x] == 1:
+                    pygame.draw.rect(self.screen, alive, rect)
                 else:
-                    color = pygame.Color("white")
-                pygame.draw.rect(self.screen, color, cell_rect)
+                    pygame.draw.rect(self.screen, dead, rect)
 
     def get_neighbours(self, cell: Cell) -> Cells:
         """
-@@ -105,7 +116,17 @@ def get_neighbours(self, cell: Cell) -> Cells:
+        Вернуть список соседних клеток для клетки `cell`.
+
+        Соседними считаются клетки по горизонтали, вертикали и диагоналям,
+        то есть, во всех направлениях.
+
+        Parameters
+        ----------
+        cell : Cell
+            Клетка, для которой необходимо получить список соседей. Клетка
+            представлена кортежем, содержащим ее координаты на игровом поле.
+
+        Returns
+        ----------
         out : Cells
             Список соседних клеток.
         """
-        pass
-        row, col = cell
+        y, x = cell
         neighbours = []
-        for i in range(-1, 2):
-            for j in range(-1, 2):
-                if i == 0 and j == 0:
+
+        for offset_y in (-1, 0, 1):
+            for offset_x in (-1, 0, 1):
+                if offset_y == 0 and offset_x == 0:
                     continue
-                neighbour_row = row + i
-                neighbour_col = col + j
-                if 0 <= neighbour_row < self.cell_height and 0 <= neighbour_col < self.cell_width:
-                    neighbours.append(self.grid[neighbour_row][neighbour_col])
+                new_y = y + offset_y
+                new_x = x + offset_x
+
+                if 0 <= new_y < self.cell_height and 0 <= new_x < self.cell_width:
+                    neighbours.append(self.grid[new_y][new_x])
+
         return neighbours
 
     def get_next_generation(self) -> Grid:
         """
-@@ -116,4 +137,22 @@ def get_next_generation(self) -> Grid:
+        Получить следующее поколение клеток.
+
+        Returns
+        ----------
         out : Grid
             Новое поколение клеток.
         """
-        pass
-        new_grid = []
-        for row in range(self.cell_height):
-            new_row = []
-            for col in range(self.cell_width):
-                current_cell = self.grid[row][col]
-                neighbours = self.get_neighbours((row, col))
-                alive_neighbours = sum(neighbours)
-                if current_cell == 1:
-                    if alive_neighbours in (2, 3):
-                        new_row.append(1)
-                    else:
-                        new_row.append(0)
+
+        new_grid = [[0] * self.cell_width for _ in range(self.cell_height)]
+        for y in range(self.cell_height):
+            for x in range(self.cell_width):
+                neighbours = self.get_neighbours((y, x))
+                if self.grid[y][x] == 1:
+                    if sum(neighbours) == 2 or sum(neighbours) == 3:
+                        new_grid[y][x] = 1
                 else:
-                    if alive_neighbours == 3:
-                        new_row.append(1)
-                    else:
-                        new_row.append(0)
-            new_grid.append(new_row)
+                    if sum(neighbours) == 3:
+                        new_grid[y][x] = 1
+
         return new_grid
